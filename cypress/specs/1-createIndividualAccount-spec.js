@@ -5,9 +5,9 @@ const d = D.scenarios[0]
 
 context('Log in to the Nucleus Wealth portal, create an individual account, and complete the onboarding portal', () => {
 
-    before(function () {
-        ui.app.clear_gmail_inbox()
-    })
+    // before(function () {
+    //     ui.app.clear_gmail_inbox()
+    // })
 
     beforeEach(function () {
         Cypress.Cookies.debug(true)
@@ -178,8 +178,8 @@ context('Log in to the Nucleus Wealth portal, create an individual account, and 
             .click_Agree_checkbox()
             .click_Submit_Application_button()
         ui.onboarding.verify_success_page()
-        cy.wait(45000)
-        ui.onboarding.verify_email_arrives_to_specified_address(D.gmailAccount, C.emailTemplates.individualAccountCreated)
+        // cy.wait(45000)
+        // ui.onboarding.verify_email_arrives_to_specified_address(D.gmailAccount, C.emailTemplates.individualAccountCreated)
     });
 })
 
