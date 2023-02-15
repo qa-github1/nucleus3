@@ -51,6 +51,7 @@ jobs:
       - name: Deploy report to Github Pages1
         if: always()
         uses: peaceiris/actions-gh-pages@v2
+        keep_files: true
         env:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
@@ -83,22 +84,23 @@ jobs:
         if: always()
         continue-on-error: true
         with:
-          ref: gh-pages2
-          path: gh-pages2
+          ref: gh-pages
+          path: gh-pages
 
       - name: Allure Report action from marketplace
         uses: simple-elf/allure-report-action@master
         if: always()
         with:
           allure_results: report/allure-results
-          allure_history: allure-history2
+          allure_history: allure-history
           keep_reports: 2
 
       - name: Deploy report to Github Pages2
         if: always()
         uses: peaceiris/actions-gh-pages@v2
+        keep_files: true
         env:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PUBLISH_BRANCH: gh-pages2
-          PUBLISH_DIR: allure-history2
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: allure-history
 
