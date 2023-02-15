@@ -1,0 +1,28 @@
+{
+  "integrationFolder": "./cypress/specs",
+  "screenshotsFolder": "./cypress/snapshots",
+  "trashAssetsBeforeRuns": true,
+  "defaultCommandTimeout": 100000,
+  "requestTimeout": 100000,
+  "taskTimeout": 150000,
+  "responseTimeout": 100000,
+  "pageLoadTimeout": 100000,
+  "video": true,
+  "viewportHeight": 900,
+  "viewportWidth": 1000,
+  "watchForFileChanges": false,
+  "chromeWebSecurity": false,
+  "screenshotOnRunFailure": true,
+  "env" : {
+    "allureResultsPath": "report/allure-results",
+    "allure": true,
+    "failSilently": false,
+    "failOnSnapshotDiff": true
+  },
+  "retries" : 0,
+  "ignoreTestFiles": [
+    "**/__snapshots__/*",
+    "**/__image_snapshots__/*"
+  ],
+  "projectId": "6ccunw"
+}

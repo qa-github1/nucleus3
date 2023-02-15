@@ -1,0 +1,1 @@
+## This folder is needed for storing JSON files after screen scraping.

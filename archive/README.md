@@ -1,0 +1,1 @@
+## This folder is needed for storing test summary in '.zip' format that should be sent out as email attachment. 
