@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Feb 15 11:30:44 GMT 2023","Wed Feb 15 11:30:48 GMT 2023","4823","","Log in to the Nucleus Wealth portal, create an individual account, and complete the onboarding portal","","","","1. Validate login credentials",""
