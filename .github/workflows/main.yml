@@ -7,195 +7,100 @@ on:
   #  - cron: '0 4 * * *'
  [ push ]
 
+permissions: write-all
+
 jobs:
-
-  Run-Cypress-Test1:
+  cypress-1:
     name: Cypress Test 1
-    if: success() || failure()
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 150
     container:
       image: cypress/browsers:node16.14.2-slim-chrome100-ff99-edge
       options: --user 1001
+
     strategy:
       fail-fast: false
+
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: npm i
-      - run: npm run test1
 
-  Run-Cypress-Test2:
+      - name: Install dependencies
+        run: npm i
+
+      - name: Run tests
+        run: npm run test1
+
+      - name: Get Allure history
+        uses: actions/checkout@v2
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Allure Report action from marketplace
+        uses: simple-elf/allure-report-action@master
+        if: always(
+        with:
+          allure_results: report/allure-results
+          allure_history: allure-history1
+          keep_reports: 2
+
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: allure-history1
+
+  cypress-2:
     name: Cypress Test 2
-    if: success() || failure()
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 150
     container:
       image: cypress/browsers:node16.14.2-slim-chrome100-ff99-edge
       options: --user 1001
+
     strategy:
       fail-fast: false
+
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: npm i
-      - run: npm run test2
 
-  Run-Cypress-Test3:
-    name: Cypress Test 3
-    if: success() || failure()
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    container:
-      image: cypress/browsers:node16.14.2-slim-chrome100-ff99-edge
-      options: --user 1001
-    strategy:
-      fail-fast: false
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
+      - name: Install dependencies
+        run: npm i
+
+      - name: Run tests
+        run: npm run test1
+
+      - name: Get Allure history
+        uses: actions/checkout@v2
+        if: always()
+        continue-on-error: true
         with:
-          node-version: 16
-      - run: npm i
-      - run: npm run test3
+          ref: gh-pages
+          path: gh-pages
 
-
-  Run-Cypress-Test4:
-    name: Cypress Test 4
-    if: success() || failure()
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    container:
-      image: cypress/browsers:node16.14.2-slim-chrome100-ff99-edge
-      options: --user 1001
-    strategy:
-      fail-fast: false
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
+      - name: Allure Report action from marketplace
+        uses: simple-elf/allure-report-action@master
+        if: always(
         with:
-          node-version: 16
-      - run: npm i
-      - run: npm run test4
+          allure_results: report/allure-results
+          allure_history: allure-history1
+          keep_reports: 2
 
-
-  Run-Cypress-Test5:
-    name: Cypress Test 5
-    if: success() || failure()
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    container:
-      image: cypress/browsers:node16.14.2-slim-chrome100-ff99-edge
-      options: --user 1001
-    strategy:
-      fail-fast: false
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - run: npm i
-      - run: npm run test5
-
-  Run-Cypress-Test6:
-    name: Cypress Test 6
-    if: success() || failure()
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    container:
-      image: cypress/browsers:node16.14.2-slim-chrome100-ff99-edge
-      options: --user 1001
-    strategy:
-      fail-fast: false
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - run: npm i
-      - run: npm run test6
-
-
-  Run-Cypress-Test7:
-    name: Cypress Test 7
-    if: success() || failure()
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    container:
-      image: cypress/browsers:node16.14.2-slim-chrome100-ff99-edge
-      options: --user 1001
-    strategy:
-      fail-fast: false
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - run: npm i
-      - run: npm run test7
-
-
-  Run-Cypress-Test8:
-    name: Cypress Test 8
-    if: success() || failure()
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    container:
-      image: cypress/browsers:node16.14.2-slim-chrome100-ff99-edge
-      options: --user 1001
-    strategy:
-      fail-fast: false
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - run: npm i
-      - run: npm run test8
-
-
-  Run-Cypress-Test9:
-    name: Cypress Test 9
-    if: success() || failure()
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    container:
-      image: cypress/browsers:node16.14.2-slim-chrome100-ff99-edge
-      options: --user 1001
-    strategy:
-      fail-fast: false
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - run: npm i
-      - run: npm run test9
-
-
-  Run-Cypress-Test10:
-    name: Cypress Test 10
-    if: success() || failure()
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    container:
-      image: cypress/browsers:node16.14.2-slim-chrome100-ff99-edge
-      options: --user 1001
-    strategy:
-      fail-fast: false
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - run: npm i
-      - run: npm run test10
-
-
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: allure-history1
 
 env:
   #CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
