@@ -3,7 +3,7 @@
   "author": "Amina Senderovic",
   "version": "1.0.0",
   "scripts": {
-    "e2e-tests": "cypress run --env type=actual failSilently=false onGithubActions=true --record --config screenshotsFolder=cypress/snapshots/actual --browser chrome --spec cypress/specs/1-createIndividualAccount** ",
+    "e2e-tests": "cypress run --env type=actual failSilently=false onGithubActions=true --config screenshotsFolder=cypress/snapshots/actual --browser chrome --spec cypress/specs/1-createIndividualAccount** ",
     "e2e-test1": "cypress run --env type=actual failSilently=false onGithubActions=true --record --config screenshotsFolder=cypress/snapshots/actual --browser chrome --spec cypress/specs/1-createIndividualAccount-spec.js ",
     "e2e-test2": "cypress run --env type=actual failSilently=false onGithubActions=true --record --config screenshotsFolder=cypress/snapshots/actual --browser chrome --spec cypress/specs/2-createPersonalSuperAccount-spec.js ",
     "e2e-test3": "cypress run --env type=actual failSilently=false onGithubActions=true --record --config screenshotsFolder=cypress/snapshots/actual --browser chrome --spec cypress/specs/3-createSMSFaccount-spec.js ",
