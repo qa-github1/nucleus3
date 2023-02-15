@@ -45,6 +45,17 @@ export default class LoginPage extends BasePage {
         return this;
     }
 
+    enter_wrong_credentials_and_click_Sign_In(username, pass) {
+        let user = {
+            username: username,
+            password: pass
+        }
+        usernameInput().type(user.username);
+        passwordInput().type(user.password);
+        signInButton().click()
+        return this;
+    }
+
     enter_credentials_for_sign_up(data) {
        emailInput().type(data.email);
        phoneNumberInput().type(data.phoneNumber);
