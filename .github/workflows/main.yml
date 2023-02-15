@@ -51,7 +51,8 @@ jobs:
       - name: Deploy report to Github Pages1
         if: always()
         uses: peaceiris/actions-gh-pages@v2
-        keep_files: true
+        with:
+          keep_files: true
         env:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
@@ -98,7 +99,8 @@ jobs:
       - name: Deploy report to Github Pages2
         if: always()
         uses: peaceiris/actions-gh-pages@v2
-        keep_files: true
+        with:
+          keep_files: true
         env:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
