@@ -38,14 +38,14 @@ jobs:
         continue-on-error: true
         with:
           ref: gh-pages
-          path: gh-pages/${{github.run_number}}
+          path: gh-pages
 
       - name: Allure Report action from marketplace
         uses: simple-elf/allure-report-action@master
         if: always()
         with:
           allure_results: report/allure-results
-          allure_history: allure-history${{github.run_number}}
+          allure_history: allure-history
           keep_reports: 2
 
       - name: Deploy report to Github Pages
@@ -54,7 +54,7 @@ jobs:
         env:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: allure-history${{github.run_number}}
+          PUBLISH_DIR: allure-history
 
   cypress-2:
     name: Cypress Test 2
@@ -84,14 +84,14 @@ jobs:
         continue-on-error: true
         with:
           ref: gh-pages
-          path: gh-pages/${{github.run_number}}
+          path: gh-pages
 
       - name: Allure Report action from marketplace
         uses: simple-elf/allure-report-action@master
         if: always()
         with:
           allure_results: report/allure-results
-          allure_history: allure-history${{github.run_number}}
+          allure_history: allure-history2
           keep_reports: 2
 
       - name: Deploy report to Github Pages
@@ -100,7 +100,7 @@ jobs:
         env:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: allure-history${{github.run_number}}
+          PUBLISH_DIR: allure-history2
 
 env:
   #CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
