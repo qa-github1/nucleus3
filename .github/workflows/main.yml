@@ -37,8 +37,8 @@ jobs:
         if: always()
         continue-on-error: true
         with:
-          ref: gh-pages1
-          path: gh-pages1
+          ref: gh-pages/1
+          path: gh-pages/1
 
       - name: Allure Report action from marketplace
         uses: simple-elf/allure-report-action@master
@@ -53,8 +53,8 @@ jobs:
         uses: peaceiris/actions-gh-pages@v2
         env:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PUBLISH_BRANCH: gh-pages1
-          PUBLISH_DIR: allure-history
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: 1/allure-history
 
   cypress-2:
     name: Cypress Test 2
@@ -83,8 +83,8 @@ jobs:
         if: always()
         continue-on-error: true
         with:
-          ref: gh-pages2
-          path: gh-pages2
+          ref: gh-pages/2
+          path: gh-pages/2
 
       - name: Allure Report action from marketplace
         uses: simple-elf/allure-report-action@master
@@ -99,8 +99,8 @@ jobs:
         uses: peaceiris/actions-gh-pages@v2
         env:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PUBLISH_BRANCH: gh-pages2
-          PUBLISH_DIR: allure-history2
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: 2/allure-history
 
 env:
   #CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
