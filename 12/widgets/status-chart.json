@@ -1,1 +1,1 @@
-[{"uid":"b067f0a8033a6287","name":"1. Validate login credentials","time":{"start":1676458789618,"stop":1676458815794,"duration":26176},"status":"passed","severity":"normal"}]
+[{"uid":"2d75e76c2757d1ee","name":"1. Validate login credentials","time":{"start":1676458774458,"stop":1676458883753,"duration":109295},"status":"failed","severity":"normal"}]
