@@ -1,0 +1,1 @@
+{"5122d5a2f05624f4184887b476fe9fc1":{"statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1},"items":[{"uid":"a1ece5afc3bd6618","reportUrl":"https://qa-github1.github.io/nucleus3/16//#testresult/a1ece5afc3bd6618","status":"passed","time":{"start":1676460668183,"stop":1676460681895,"duration":13712}}]}}
