@@ -83,8 +83,8 @@ jobs:
         if: always()
         continue-on-error: true
         with:
-          ref: gh-pages
-          path: gh-pages
+          ref: gh-pages2
+          path: gh-pages2
 
       - name: Allure Report action from marketplace
         uses: simple-elf/allure-report-action@master
@@ -99,12 +99,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v2
         env:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PUBLISH_BRANCH: gh-pages
+          PUBLISH_BRANCH: gh-pages2
           PUBLISH_DIR: allure-history2
 
-env:
-  #CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-  #CYPRESS_RECORD_KEY: 6ac5d5b5-cb9c-483b-b332-1a38841fc636
-  BUCKET_NAME: ${{ secrets.BUCKET_NAME }}
-  AWS_ACCESS_ID: ${{ secrets.AWS_ACCESS_ID }}
-  AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_KEY }}
