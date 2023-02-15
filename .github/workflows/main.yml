@@ -48,7 +48,6 @@ jobs:
   Run-Cypress-Test1:
     name: Cypress Test 1
     if: success() || failure()
-    needs: [cypress-run, Run-Cypress-Test2]
     runs-on: ubuntu-latest
     timeout-minutes: 30
     container:
