@@ -7,7 +7,7 @@
   "taskTimeout": 150000,
   "responseTimeout": 100000,
   "pageLoadTimeout": 100000,
-  "video": true,
+  "video": false,
   "viewportHeight": 900,
   "viewportWidth": 1000,
   "watchForFileChanges": false,
