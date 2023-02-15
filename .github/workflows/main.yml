@@ -48,7 +48,7 @@ jobs:
           allure_history: allure-history
           keep_reports: 2
 
-      - name: Deploy report to Github Pages
+      - name: Deploy report to Github Pages1
         if: always()
         uses: peaceiris/actions-gh-pages@v2
         env:
@@ -94,7 +94,7 @@ jobs:
           allure_history: allure-history2
           keep_reports: 2
 
-      - name: Deploy report to Github Pages
+      - name: Deploy report to Github Pages2
         if: always()
         uses: peaceiris/actions-gh-pages@v2
         env:
