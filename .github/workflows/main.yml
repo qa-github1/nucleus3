@@ -42,7 +42,7 @@ jobs:
 
       - name: Allure Report action from marketplace
         uses: simple-elf/allure-report-action@master
-        if: always(
+        if: always()
         with:
           allure_results: report/allure-results
           allure_history: allure-history1
@@ -88,7 +88,7 @@ jobs:
 
       - name: Allure Report action from marketplace
         uses: simple-elf/allure-report-action@master
-        if: always(
+        if: always()
         with:
           allure_results: report/allure-results
           allure_history: allure-history1
