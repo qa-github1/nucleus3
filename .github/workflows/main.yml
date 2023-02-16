@@ -29,8 +29,55 @@ jobs:
       - name: Install dependencies
         run: npm i
 
-      - name: Run tests
-        run: npm run e2e-tests
+      - name: Run test 1
+        run: npm run test1
+      - name: Fetch email 1
+        run: npm run email1
+
+      - name: Run test 2
+        run: npm run test2
+      - name: Fetch email 2
+        run: npm run email2
+
+      - name: Run test 3
+        run: npm run test3
+      - name: Fetch email 3
+        run: npm run email3
+
+      - name: Run test 4
+        run: npm run test4
+      - name: Fetch email 4
+        run: npm run email4
+
+      - name: Run test 5
+        run: npm run test5
+      - name: Fetch email 5
+        run: npm run email5
+
+      - name: Run test 6
+        run: npm run test6
+      - name: Fetch email 6
+        run: npm run email6
+
+      - name: Run test 7
+        run: npm run test7
+      - name: Fetch email 7
+        run: npm run email7
+
+      - name: Run test 8
+        run: npm run test8
+      - name: Fetch email 8
+        run: npm run email8
+
+      - name: Run test 9
+        run: npm run test9
+      - name: Fetch email 9
+        run: npm run email9
+
+      - name: Run test 10
+        run: npm run test10
+      - name: Fetch email 10
+        run: npm run email10
 
       - name: Get Allure history
         uses: actions/checkout@v2
