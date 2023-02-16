@@ -5,9 +5,6 @@ const d = D.scenarios[0]
 
 context('Email 3', () => {
 
-    before(function () {
-        ui.app.clear_gmail_inbox()
-    })
 
     it('13. Verify Email', function () {
         // cy.wait(45000)

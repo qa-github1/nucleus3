@@ -7,9 +7,9 @@ const d = D.scenarios[0]
 
 context('Log in to the Nucleus Wealth portal, create an individual account, and complete the onboarding portal3', () => {
 
-    // before(function () {
-    //     ui.app.clear_gmail_inbox()
-    // })
+    before(function () {
+        ui.app.clear_gmail_inbox()
+    })
 
     beforeEach(function () {
         Cypress.Cookies.debug(true)
