@@ -437,7 +437,7 @@ export default class BasePage {
                 });
             });
         });
-    },
+    }
 
 
 }
