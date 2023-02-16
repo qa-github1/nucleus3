@@ -7,9 +7,6 @@ const d = D.scenarios[0]
 
 context('Log in to the Nucleus Wealth portal, create an individual account, and complete the onboarding portal3', () => {
 
-    before(function () {
-        ui.app.clear_gmail_inbox()
-    })
 
     beforeEach(function () {
         Cypress.Cookies.debug(true)
@@ -19,6 +16,7 @@ context('Log in to the Nucleus Wealth portal, create an individual account, and 
     });
 
     it('1. Validate login credentials', function () {
+        ui.app.clear_gmail_inbox()
         ui.login.open_base_url()
             .verify_login_menu(D.user)
             .enter_wrong_credentials_and_click_Sign_In(D.user.username, 'wrongPass')
